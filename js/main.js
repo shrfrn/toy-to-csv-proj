@@ -29,7 +29,7 @@ function onSetSort(sortBy) {
 function onToggleCheckAll(elSelectAll) {
     const { checked } = elSelectAll
     selectAllToys(checked)
-    renderToys(true)
+    renderToys()
 }
 
 function onToggleSelection({ checked }, toyId) {

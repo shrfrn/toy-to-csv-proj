@@ -4,11 +4,11 @@ var gSortBy = ''
 var gSortDirection = 1
 
 var gToys = [
-    createToy('Teddy Bear', 15, 1312504831014, 'cute'),
-    createToy('Dinosaur', 10, 1412541496669, 'scary'),
-    createToy('RC Car', 30, 1532544443836, 'fast'),
-    createToy('Barby', 12, 1600544939113, 'house'),
-    createToy('Telescope', 100, 1552542628671, 'science')
+    _createToy('Teddy Bear', 15, 1312504831014, 'cute'),
+    _createToy('Dinosaur', 10, 1412541496669, 'scary'),
+    _createToy('RC Car', 30, 1532544443836, 'fast'),
+    _createToy('Barby', 12, 1600544939113, 'house'),
+    _createToy('Telescope', 100, 1552542628671, 'science')
 ]
 
 function getToys() {
@@ -41,7 +41,7 @@ function getAsCSV() {
     return csvStr
 }
 function getAsCSVGeneric() {
-    let csvStr = Object.keys(createToy()).map(_capitlaize).join()
+    let csvStr = Object.keys(_createToy()).map(_capitlaize).join()
     gToys.forEach(toy => {
         if (!toy.isSelected) return
         const csvLine = Object.values(toy).join()
@@ -50,7 +50,7 @@ function getAsCSVGeneric() {
     return csvStr
 }
 
-function createToy(name, price, createdAt, category) {
+function _createToy(name, price, createdAt, category) {
     return {
         id: _makeId(),
         name,
