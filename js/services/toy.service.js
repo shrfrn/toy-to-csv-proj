@@ -41,7 +41,7 @@ function getAsCSV() {
     return csvStr
 }
 function getAsCSVGeneric() {
-    let csvStr = Object.keys(_createToy()).map(_capitlaize).join()
+    let csvStr = Object.keys(_createToy()).map(capitlaize).join()
     gToys.forEach(toy => {
         if (!toy.isSelected) return
         const csvLine = Object.values(toy).join()
@@ -52,7 +52,7 @@ function getAsCSVGeneric() {
 
 function _createToy(name, price, createdAt, category) {
     return {
-        id: _makeId(),
+        id: makeId(),
         name,
         price,
         createdAt,
@@ -67,19 +67,6 @@ function getFormatDate(time) {
 }
 
 // Private functions
-
-function _makeId(length = 6) {
-    let txt = ''
-    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-    for (let i = 0; i < length; i++) {
-        txt += possible.charAt(Math.floor(Math.random() * possible.length))
-    }
-    return txt
-}
-
-function _capitlaize(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1)
-}
 
 function _sortToys() {
     if (!gSortBy) return
