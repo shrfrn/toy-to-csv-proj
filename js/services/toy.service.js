@@ -61,11 +61,6 @@ function _createToy(name, price, createdAt, category) {
     }
 }
 
-function getFormatDate(time) {
-    const date = new Date(time)
-    return date.toDateString()
-}
-
 // Private functions
 
 function _sortToys() {

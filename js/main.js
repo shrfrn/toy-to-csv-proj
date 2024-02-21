@@ -13,9 +13,11 @@ function renderToys() {
         return `<tr class="row">
                     <td> ${toy.name}</td>
                     <td class="${className}">$${toy.price}</td>
-                    <td> ${getFormatDate(toy.createdAt)}</td>
+                    <td> ${getFormattedDate(toy.createdAt)}</td>
                     <td> ${toy.category}</td>
-                    <td> <input oninput="onToggleSelection(this, '${toy.id}')" type="checkbox" ${checked} ></td>
+                    <td> <input 
+                            oninput="onToggleSelection('${toy.id}', this)" 
+                            type="checkbox" ${checked} ></td>
                 </tr>`
     })
     document.querySelector('tbody').innerHTML = strHTMLs.join('')

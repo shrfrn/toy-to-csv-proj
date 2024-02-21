@@ -12,3 +12,8 @@ function makeId(length = 6) {
 function capitlaize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1)
 }
+
+function getFormattedDate(time) {
+    const date = new Date(time)
+    return date.toDateString()
+}
