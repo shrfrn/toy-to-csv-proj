@@ -34,7 +34,7 @@ function onToggleCheckAll(elSelectAll) {
     renderToys()
 }
 
-function onToggleSelection({ checked }, toyId) {
+function onToggleSelection(toyId, { checked }) {
     setSelected(toyId, checked)
     renderToys()
 }
